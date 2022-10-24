@@ -81,12 +81,12 @@ class RocketLazyLoadScripts {
 	}
 	_preconnect3rdParties() {
 		let e = [];
-		document.querySelectorAll("script[type$=-text/javascript]").forEach((t => {
+		document.querySelectorAll("script[type$='-text/javascript']").forEach((t => {
 			if (t.hasAttribute("src")) {
 				const n = new URL(t.src).origin;
 				n !== location.origin && e.push({
 					src: n,
-					crossOrigin: t.crossOrigin || "module" === t.getAttribute("data-rocket-type")
+					crossOrigin: t.crossOrigin
 				})
 			}
 		})), e = [...new Map(e.map((e => [JSON.stringify(e), e]))).values()], this._batchInjectResourceHints(e, "preconnect")
@@ -99,7 +99,7 @@ class RocketLazyLoadScripts {
 		window.dispatchEvent(new Event("rocket-allScriptsLoaded")), this._replayClicks()
 	}
 	_registerAllDelayedScripts() {
-		document.querySelectorAll("script[type$=-text/javascript]").forEach((e => {
+		document.querySelectorAll("script[type$='-text/javascript']").forEach((e => {
 			e.hasAttribute("src") ? e.hasAttribute("async") && !1 !== e.async ? this.delayedScripts.async.push(e) : e.hasAttribute("defer") && !1 !== e.defer || "module" === e.getAttribute("data-rocket-type") ? this.delayedScripts.defer.push(e) : this.delayedScripts.normal.push(e) : this.delayedScripts.normal.push(e)
 		}))
 	}
