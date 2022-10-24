@@ -77,6 +77,7 @@ class RocketLazyLoadScripts {
 		e.hasAttribute && e.hasAttribute(t) && (event.target.setAttribute(n, event.target.getAttribute(t)), event.target.removeAttribute(t))
 	}
 	_triggerListener() {
+		console.log('_triggerListener');
 		this._removeUserInteractionListener(this), "loading" === document.readyState ? document.addEventListener("DOMContentLoaded", this._loadEverythingNow.bind(this)) : this._loadEverythingNow()
 	}
 	_preconnect3rdParties() {
@@ -93,6 +94,7 @@ class RocketLazyLoadScripts {
 		})), e = [...new Map(e.map((e => [JSON.stringify(e), e]))).values()], this._batchInjectResourceHints(e, "preconnect")
 	}
 	async _loadEverythingNow() {
+		console.log('_loadEverythingNow');
 		this.lastBreath = Date.now(), this._delayEventListeners(), this._delayJQueryReady(this), this._handleDocumentWrite(), this._registerAllDelayedScripts(), this._preloadAllScripts(), await this._loadScriptsFromList(this.delayedScripts.normal), await this._loadScriptsFromList(this.delayedScripts.defer), await this._loadScriptsFromList(this.delayedScripts.async);
 		try {
 			await this._triggerDOMContentLoaded(), await this._triggerWindowLoad()
