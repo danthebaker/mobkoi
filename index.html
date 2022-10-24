@@ -80,6 +80,7 @@ class RocketLazyLoadScripts {
 		this._removeUserInteractionListener(this), "loading" === document.readyState ? document.addEventListener("DOMContentLoaded", this._loadEverythingNow.bind(this)) : this._loadEverythingNow()
 	}
 	_preconnect3rdParties() {
+		console.log('_preconnect3rdParties');
 		let e = [];
 		document.querySelectorAll("script[type$='-text/javascript']").forEach((t => {
 			if (t.hasAttribute("src")) {
@@ -99,11 +100,13 @@ class RocketLazyLoadScripts {
 		window.dispatchEvent(new Event("rocket-allScriptsLoaded")), this._replayClicks()
 	}
 	_registerAllDelayedScripts() {
+		console.log('_registerAllDelayedScripts');
 		document.querySelectorAll("script[type$='-text/javascript']").forEach((e => {
 			e.hasAttribute("src") ? e.hasAttribute("async") && !1 !== e.async ? this.delayedScripts.async.push(e) : e.hasAttribute("defer") && !1 !== e.defer || "module" === e.getAttribute("data-rocket-type") ? this.delayedScripts.defer.push(e) : this.delayedScripts.normal.push(e) : this.delayedScripts.normal.push(e)
 		}))
 	}
 	async _transformScript(e) {
+		console.log('_transformScript');
 		return await this._littleBreath(), new Promise((t => {
 			const n = document.createElement("script");
 			[...e.attributes].forEach((e => {
