@@ -22,10 +22,15 @@
 			document.querySelectorAll("script[data-src]").forEach(function(scriptTag) {
 				scriptTag.setAttribute("src", scriptTag.getAttribute("data-src"));
 			});
+		}
+
+		function updateTypes() {
 			document.querySelectorAll("script[defer]").forEach(function(scriptTag) {
 				scriptTag.setAttribute("type", "text/javascript");
 			});
 		}
+
+		setTimeout(updateTypes, 500);
 	</script>
 
 		<meta charset="UTF-8">
