@@ -1628,77 +1628,75 @@ ON OUR PLATFORM</h2>		</div>
 <div class="cli-modal-backdrop cli-fade cli-settings-overlay"></div>
 <div class="cli-modal-backdrop cli-fade cli-popupbar-overlay"></div>
 <!--googleon: all--><script type="rocketlazyloadscript" defer src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
-<script data-cfasync="false">
-!function(){var e=window.rudderanalytics=window.rudderanalytics||[];e.methods=["load","page","track","identify","alias","group","ready","reset","getAnonymousId","setAnonymousId","getUserId","getUserTraits","getGroupId","getGroupTraits"],e.factory=function(t){return function(){var r=Array.prototype.slice.call(arguments);return r.unshift(t),e.push(r),e}};for(var t=0;t<e.methods.length;t++){var r=e.methods[t];e[r]=e.factory(r)}e.loadJS=function(e,t){var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.rudderlabs.com/v1.1/rudder-analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a)},e.loadJS(),
-e.load("2FwJk6KRTwcR827Nw9W4jDjE9fd","https://danbmedefzavzlslreyxjgcjwlf.dataplane.rudderstack.com"),
-e.page()}();
-</script>
-<script type="rocketlazyloadscript">
-function getUrlParameter(name) {
-    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-    var results = regex.exec(location.search);
-    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-}
-
-if (getUrlParameter('utm_source')) {
-	Cookies.set('utm_source', getUrlParameter('utm_source'), { expires: 7 });
-}
-if (getUrlParameter('utm_campaign')) {
-	Cookies.set('utm_campaign', getUrlParameter('utm_campaign'), { expires: 7 });
-}
-if (getUrlParameter('utm_medium')) {
-	Cookies.set('utm_medium', getUrlParameter('utm_medium'), { expires: 7 });  
-}
-if (getUrlParameter('utm_content')) {
-	Cookies.set('utm_content', getUrlParameter('utm_content'), { expires: 7 });
-}
-if (getUrlParameter('utm_term')) {
-	Cookies.set('utm_term', getUrlParameter('utm_term'), { expires: 7 });
-}
-var utm_source   = Cookies.get('utm_source');
-var utm_campaign = Cookies.get('utm_campaign');
-var utm_medium   = Cookies.get('utm_medium');
-var utm_content  = Cookies.get('utm_content');
-var utm_term     = Cookies.get('utm_term');
+<script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {
+	!function(){var e=window.rudderanalytics=window.rudderanalytics||[];e.methods=["load","page","track","identify","alias","group","ready","reset","getAnonymousId","setAnonymousId","getUserId","getUserTraits","getGroupId","getGroupTraits"],e.factory=function(t){return function(){var r=Array.prototype.slice.call(arguments);return r.unshift(t),e.push(r),e}};for(var t=0;t<e.methods.length;t++){var r=e.methods[t];e[r]=e.factory(r)}e.loadJS=function(e,t){var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.rudderlabs.com/v1.1/rudder-analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a)},e.loadJS(),
+	e.load("2FwJk6KRTwcR827Nw9W4jDjE9fd","https://danbmedefzavzlslreyxjgcjwlf.dataplane.rudderstack.com"),
+	e.page()
+	function getUrlParameter(name) {
+		name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+		var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+		var results = regex.exec(location.search);
+		return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+	}
 	
-if ((getUrlParameter('utm_source') || getUrlParameter('utm_campaign') || getUrlParameter('utm_medium') || getUrlParameter('utm_content') || getUrlParameter('utm_term'))) {
-        e.track(
-            "UTM",
-            {
-                context: {
-                    traits: {
-                    utm_source,
-                    utm_campaign,
-                    utm_medium,
-                    utm_content,
-                    utm_term
-                    }
-                }
-            }
-        );
-    }    
- 
-    jQuery(function() {
-        jQuery("[data-clickid]").click(function () {
-            e.track(
-                "Click",
-                {
-                    context: {
-                        traits: {
-                            clickid: $(this).attr("data-clickid"),
-                            click_url: $(this).attr("data-url")
-                        }
-                    }
-                }
-            );
-        });
-    });		   
-		   
-
+	if (getUrlParameter('utm_source')) {
+		Cookies.set('utm_source', getUrlParameter('utm_source'), { expires: 7 });
+	}
+	if (getUrlParameter('utm_campaign')) {
+		Cookies.set('utm_campaign', getUrlParameter('utm_campaign'), { expires: 7 });
+	}
+	if (getUrlParameter('utm_medium')) {
+		Cookies.set('utm_medium', getUrlParameter('utm_medium'), { expires: 7 });  
+	}
+	if (getUrlParameter('utm_content')) {
+		Cookies.set('utm_content', getUrlParameter('utm_content'), { expires: 7 });
+	}
+	if (getUrlParameter('utm_term')) {
+		Cookies.set('utm_term', getUrlParameter('utm_term'), { expires: 7 });
+	}
+	var utm_source   = Cookies.get('utm_source');
+	var utm_campaign = Cookies.get('utm_campaign');
+	var utm_medium   = Cookies.get('utm_medium');
+	var utm_content  = Cookies.get('utm_content');
+	var utm_term     = Cookies.get('utm_term');
+		
+	if ((getUrlParameter('utm_source') || getUrlParameter('utm_campaign') || getUrlParameter('utm_medium') || getUrlParameter('utm_content') || getUrlParameter('utm_term'))) {
+			e.track(
+				"UTM",
+				{
+					context: {
+						traits: {
+						utm_source,
+						utm_campaign,
+						utm_medium,
+						utm_content,
+						utm_term
+						}
+					}
+				}
+			);
+		}    
+	 
+		jQuery(function() {
+			jQuery("[data-clickid]").click(function () {
+				e.track(
+					"Click",
+					{
+						context: {
+							traits: {
+								clickid: $(this).attr("data-clickid"),
+								click_url: $(this).attr("data-url")
+							}
+						}
+					}
+				);
+			});
+		});		   
+			   
+			   }();
+		
 	
-
-</script>		<span class="ssp-id" style="display:none">4315</span>
+	});</script>		<span class="ssp-id" style="display:none">4315</span>
 		<svg xmlns="http://www.w3.org/2000/svg" id="e-font-icon-svg-symbols" style="display: none;"><symbol id="eicon-menu-bar" viewbox="0 0 1000 1000"><path d="M104 333H896C929 333 958 304 958 271S929 208 896 208H104C71 208 42 237 42 271S71 333 104 333ZM104 583H896C929 583 958 554 958 521S929 458 896 458H104C71 458 42 487 42 521S71 583 104 583ZM104 833H896C929 833 958 804 958 771S929 708 896 708H104C71 708 42 737 42 771S71 833 104 833Z"></path></symbol><symbol id="eicon-close" viewbox="0 0 1000 1000"><path d="M742 167L500 408 258 167C246 154 233 150 217 150 196 150 179 158 167 167 154 179 150 196 150 212 150 229 154 242 171 254L408 500 167 742C138 771 138 800 167 829 196 858 225 858 254 829L496 587 738 829C750 842 767 846 783 846 800 846 817 842 829 829 842 817 846 804 846 783 846 767 842 750 829 737L588 500 833 258C863 229 863 200 833 171 804 137 775 137 742 167Z"></path></symbol><symbol id="fas-chevron-down" viewbox="0 0 448 512"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></symbol><symbol id="fab-linkedin" viewbox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></symbol><symbol id="fab-instagram" viewbox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></symbol><symbol id="fab-twitter" viewbox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></symbol></svg><link rel="stylesheet" id="elementor-post-24393-css" href="/wp-content/uploads/elementor/css/post-24393.css?ver=1666630730" type="text/css" media="all">
 <link rel="stylesheet" id="elementor-post-24400-css" href="/wp-content/uploads/elementor/css/post-24400.css?ver=1666630730" type="text/css" media="all">
 <link rel="stylesheet" id="elementor-post-24405-css" href="/wp-content/uploads/elementor/css/post-24405.css?ver=1666630731" type="text/css" media="all">
